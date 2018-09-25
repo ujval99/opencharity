@@ -1,0 +1,132 @@
+/* Welcome to Compass. Use this file to define print styles.
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" /> */
+
+// Grid
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+$total-columns: 12;
+$row-width: 1170px;
+$column-gutter: 30px;
+
+// Global
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+$primary-color: #5fc0c3;
+$secondary-color: #f1f2f5;
+$body-bg: #ffffff;
+$body-font-color: #575656;
+$body-font-size: 14px;
+$body-line-height: 23px;
+$body-font-weight: normal;
+$body-font-family: 'Museo Sans', sans-serif;
+$base-font-family: 'Open Sans', sans-serif;
+
+$color-gray: #8c93a5;
+
+$border-box: border-box;
+$border-radius: 0;
+
+// Typography
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+$header-font-family: $body-font-family;
+$header-font-weight: 500;
+$header-font-style: normal;
+$header-font-color: #575656;
+$header-line-height: 1.1;
+$header-top-margin: 0;
+$header-bottom-margin: 17px;
+$header-text-transform: none;
+$header-text-rendering: optimizeLegibility;
+
+$h1-font-size: 55px;
+$h2-font-size: 26px;
+$h3-font-size: 20px;
+$h4-font-size: 17px;
+$h5-font-size: 16px;
+$h6-font-size: 14px;
+$h1-font-size-small: 40px;
+$h2-font-size-small: 22px;
+
+// We use these to style paragraphs
+$paragraph-font-family: $base-font-family;
+$paragraph-font-weight: normal;
+$paragraph-font-size: 14px;
+$paragraph-font-color: #5b6172;
+$paragraph-line-height: 23px;
+$paragraph-margin-bottom: 20px;
+$paragraph-text-rendering: optimizeLegibility;
+
+// We use these to style anchors
+$anchor-text-decoration: none;
+$anchor-font-color: $primary-color;
+$anchor-font-color-hover: #575656;
+
+// Buttons
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+$button-sm: 8px;
+$button-md: 10px;
+$button-lg: 12px;
+$button-font-sm: 12px;
+$button-font-md: 14px;
+$button-font-lg: 16px;
+
+$button-font-family: $body-font-family;
+$button-font-color: $primary-color;
+$button-font-color-alt: #fff;
+$button-font-weight: 500;
+$button-bg-color: $primary-color;
+$button-bg-hover: transparent;
+$button-border-width: 2px;
+$button-border-style: solid;
+$button-border-color: $primary-color;
+$button-border-hover: $primary-color;
+$button-margin-bottom: 0;
+
+// Footer
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+$footer-bg: #45484d;
+$footer-border-color: #585b61;
+$footer-font-color: #979eb1;
+$footer-link-color: #5dc0c9;
+
+// Media Query
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+$screen: "only screen";
+$xs-only: "only screen and (max-width: 575px)";
+$sm-up: "#{$screen} and (min-width: 576px)";
+$sm-only: "#{$screen} and (min-width: 576px) and (max-width: 767px)";
+$md-up: "#{$screen} and (min-width: 768px)";
+$md-only: "#{$screen} and (min-width: 768px) and (max-width: 991px)";
+$lg-up: "#{$screen} and (min-width: 992px)";
+$lg-only: "#{$screen} and (min-width: 992px) and (max-width: 1199px)";
+$xlg-up: "#{$screen} and (min-width: 1200px)";
+$xlg-only: "#{$screen} and (min-width: 1200px) and (max-width: 99999px)";
+
+// Forms variables
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+$form-label-font-family: $base-font-family;
+$form-label-font-size: 14px;
+$form-label-font-weight: 600;
+$form-label-line-height: 1;
+$form-label-font-color: $body-font-color;
+$form-label-bottom-margin: 5px;
+
+$form-item-margin: 20px;
+$input-font-family: $body-font-family;
+$input-font-color: #3e3e3e;
+$input-font-size: 14px;
+$input-bg-color: #fff;
+$input-focus-bg-color: #fff;
+$input-border-width: 1px;
+$input-border-style: solid;
+$input-border-color: #ddd;
+$input-focus-border-color: $primary-color;
+$input-border-radius: 5px;
+$input-box-shadow: 0 0 5px $primary-color;
+$input-include-glowing-effect: false;
+$input-height: 40px;
+$input-line-height: 38px;
+$input-padding: 6px 10px;
+$input-margin: 0;
+$input-disabled-bg: $secondary-color;
+$input-disabled-cursor: default;
+$select-padding: 0 26px 0 4px;

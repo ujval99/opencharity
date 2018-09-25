@@ -1,0 +1,268 @@
+/* Welcome to Compass. Use this file to define print styles.
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" /> */
+
+@mixin container() {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @media #{$sm-up} {
+    max-width: 540px;
+  }
+
+  @media #{$md-up} {
+    max-width: 720px;
+  }
+
+  @media #{$lg-up} {
+    max-width: 960px;
+  }
+
+  @media #{$xlg-up} {
+    max-width: $row-width;
+  }
+}
+
+@mixin clearfix() {
+  &:before,
+  &:after{
+    content: " "; 
+    display: table; 
+  }
+
+  &:after{
+    clear: both;
+  }
+}
+
+@mixin grid-row() {
+  margin-left: -($column-gutter/2);
+  margin-right: -($column-gutter/2);
+  @include clearfix();
+}
+
+@mixin grid-column($columns) {
+  position: relative;
+  min-height: 1px;
+  float: left;
+  padding-left: ($column-gutter / 2);
+  padding-right: ($column-gutter / 2);
+  width: (100% / ($total-columns / $columns));
+}
+
+@mixin header-style($header-text-transform) {
+  font-family: $header-font-family;
+  font-weight: $header-font-weight;
+  font-style: $header-font-style;
+  color: $header-font-color;
+  line-height: $header-line-height;
+  margin-top: $header-top-margin;
+  margin-bottom: $header-bottom-margin;
+  text-rendering: $header-text-rendering;
+  text-transform: $header-text-transform;
+}
+
+@mixin paragraph-style() {
+  font-family: $paragraph-font-family;
+  font-weight: $paragraph-font-weight;
+  font-size: $paragraph-font-size;
+  color: $paragraph-font-color;
+  line-height: $paragraph-line-height;
+  margin-bottom: $paragraph-margin-bottom;
+  text-rendering: $paragraph-text-rendering;
+}
+
+@mixin radius($border-radius: $default-border-radius) {
+  border-radius: $border-radius;
+  -moz-border-radius: $border-radius;
+  -webkit-border-radius: $border-radius;
+}
+
+@mixin box-sizing($border-box: $default-border-box) {
+  -webkit-box-sizing: $border-box;
+  -moz-box-sizing: $border-box;
+  box-sizing: $border-box;
+}
+
+@mixin button($padding:$button-md, $bg:true, $width:$width, $full-width:false, $text-transform:true) {
+  cursor: pointer;
+  font-family: $button-font-family;
+  font-weight: $button-font-weight;
+  line-height: 1.22;
+  margin: 0 0 $button-margin-bottom;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  -webkit-appearance: none;
+  appearance: none;
+  display: inline-block;
+  background-color: $button-bg-hover;
+  border-style: $button-border-style;
+  border-width: $button-border-width;
+  border-color: $button-border-color;
+  color: $button-font-color;
+  min-width: $width;
+  border-radius: 2px;
+
+  @if $text-transform == true {
+    text-transform: uppercase;
+  }
+
+    &:hover {
+      background-color: $button-bg-color;
+      border-color: $button-border-hover;
+      color: $button-font-color-alt;
+    }
+
+  @if $bg == true {
+    background-color: $button-bg-color;
+    color: $button-font-color-alt;
+
+    &:hover {
+      background-color: $button-bg-hover;
+      color: $button-font-color;
+    }
+  }
+
+  @if $padding == $button-sm {
+    padding-top: $padding;
+    padding-left: $padding * 2;
+    padding-bottom: $padding;
+    padding-right: $padding * 2;
+    
+    // We control the font-size based on mixin input.
+    font-size: $button-font-sm;
+
+    @if $full-width {
+      padding-right: $padding;
+      padding-left: $padding;
+      width: 100%;
+    }
+  }
+  @else if $padding == $button-md {
+    padding-top: $padding;
+    padding-left: $padding * 2;
+    padding-bottom: $padding;
+    padding-right: $padding * 2;
+
+    // We control the font-size based on mixin input.
+    font-size: $button-font-md;
+
+    @if $full-width {
+      padding-right: $padding;
+      padding-left: $padding;
+      width: 100%;
+    }
+  }
+  @else if $padding == $button-lg {
+    padding-top: $padding;
+    padding-left: $padding * 2;
+    padding-bottom: $padding;
+    padding-right: $padding * 2;
+
+    // We control the font-size based on mixin input.
+    font-size: $button-font-lg;
+
+    @if $full-width {
+      padding-right: $padding;
+      padding-left: $padding;
+      width: 100%;
+    }
+  }
+}
+
+// We use this mixin to give all basic form elements their style
+@mixin form-element {
+  background-color: $input-bg-color;
+  font-family: $body-font-family;
+  border: {
+    style: $input-border-style;
+    width: $input-border-width;
+    color: $input-border-color;
+  }
+  box-shadow: none;
+  color: $input-font-color;
+  display: block;
+  font-size: $input-font-size;
+  margin: $input-margin;
+  padding: $input-padding;
+  height: $input-height;
+  width: 100%;
+  @include radius($input-border-radius);
+
+  // Basic focus styles
+  &:focus {
+    background-color: $input-focus-bg-color;
+    border-color: $input-focus-border-color;
+    box-shadow: $input-box-shadow;
+    outline: none;
+  }
+  // Disbaled Styles
+  &:disabled {
+    background-color: $input-disabled-bg;
+    cursor: $input-disabled-cursor;
+  }
+
+  // Disabled background input background color
+  &[disabled],
+  &[readonly] {
+    background-color: $input-disabled-bg;
+    cursor: $input-disabled-cursor;
+  }
+}
+
+// We use this mixin to style select elements
+@mixin form-select {
+  -webkit-appearance: none !important;
+  -moz-appearance:    none;
+  appearance:         none;
+  background-color: $input-bg-color;
+
+  // Hide the dropdown arrow shown in newer IE versions
+  &::-ms-expand {
+    display: none;
+  }
+
+  // The custom arrow has some fake horizontal padding so we can align it
+  // from the right side of the element without relying on CSS3
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAFCAYAAABM6GxJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RTQyMjlCOUE4MDA3MTFFNkEyNDY5ODJFOTkyQzYyOEIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RTQyMjlCOUI4MDA3MTFFNkEyNDY5ODJFOTkyQzYyOEIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpFNDIyOUI5ODgwMDcxMUU2QTI0Njk4MkU5OTJDNjI4QiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpFNDIyOUI5OTgwMDcxMUU2QTI0Njk4MkU5OTJDNjI4QiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Ptl7luUAAAA5SURBVHjaYvz//z8DRQBqQAOIiYYbQHKEMAOSC+qQNNfBDCeEGcEEIyOyISDQhOQ6vICR0jAACDAAzFZQtdJiVlwAAAAASUVORK5CYII=');
+
+  // We can safely use leftmost and rightmost now
+  background-position: 100% center;
+  background-repeat: no-repeat;
+
+  border: {
+    style: $input-border-style;
+    width: $input-border-width;
+    color: $input-border-color;
+  }
+
+  padding: $select-padding;
+  font-size: $input-font-size;
+  font-family: $input-font-family;
+  color: $input-font-color;
+  height: $input-height;
+  line-height: $input-line-height;
+  cursor: pointer;
+  @include radius($input-border-radius);
+  &:focus {
+    background-color: $input-bg-color;
+    border-color: $input-border-color;
+  }
+  // Disabled Styles
+  &:disabled {
+    background-color: $input-disabled-bg;
+    cursor: $input-disabled-cursor;
+  }
+  option {
+    background-color: $input-bg-color;
+    color: $input-font-color;
+    font-family: $input-font-family;
+    font-size: $input-font-size;
+    line-height: normal;
+    padding: 3px 6px;
+  }
+}

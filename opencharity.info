@@ -1,0 +1,53 @@
+name = Open Charity
+description = Theme for open source software and solution for charities. Developed by <a href="http://in.linkedin.com/in/ujvalshah">Ujval Shah</a>
+core = 7.x
+engine = phptemplate
+
+; STYLESHEETS
+;----------------------------------------------------
+stylesheets[all][] = css/screen.css
+
+; JAVASCRIPTS
+;----------------------------------------------------
+
+scripts[] = js/opencharity.js
+
+; REGIONS
+;----------------------------------------------------
+
+regions[header]         = Header
+regions[featured]       = Featured
+regions[highlight]      = Highlight
+regions[content]        = Content
+regions[blogs]          = Blogs (Home Page Only)
+regions[footer]         = Footer
+
+; FEATURES
+;----------------------------------------------------
+features[] = logo
+features[] = name
+features[] = slogan
+features[] = node_user_picture
+features[] = comment_user_picture
+features[] = comment_user_verification
+features[] = favicon
+features[] = main_menu
+features[] = secondary_menu
+
+; SETTINGS
+;----------------------------------------------------
+settings[display]        = 1
+settings[twitter]        = "https://twitter.com"
+settings[facebook]       = "http://www.facebook.com"
+settings[googleplus]       = "http://google.com"
+settings[footer_copyright]   = 1
+settings[footer_developed]   = 1
+settings[footer_developedby]   = "This site was built as a collaboration between <a href="#">Manifesto Digital</a> and <a href="#">Compucorp</a>"
+
+; Information added by Drupal.org packaging script on 2018-09-17
+version = "7.x-1.1"
+core = "7.x"
+project = "opencharity"
+datestamp = "1537171489"
+
+
